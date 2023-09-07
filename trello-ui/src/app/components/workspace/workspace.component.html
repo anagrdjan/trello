@@ -1,0 +1,18 @@
+<div class="workspace-container" style="padding: 10px">
+	<h1>Trello Clone</h1>
+
+	<button mat-raised-button (click)='openNewBoardDialog()' color="primary">
+		Add new board
+	</button>
+	
+	<mat-list>
+		<mat-list-item *ngFor="let board of boards">
+			<a (click)="navigateToBoard(board)" class="board-list-item">
+				{{ board.name }}
+			</a>
+			<button mat-icon-button color="warn" (click)="deleteBoard(board.id)">
+				<mat-icon>delete</mat-icon>
+			</button>
+		</mat-list-item>
+	</mat-list>
+</div>

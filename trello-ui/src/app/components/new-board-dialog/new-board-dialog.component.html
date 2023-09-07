@@ -1,0 +1,12 @@
+<h2 style="color: white; padding: 10px">New board</h2>
+<mat-dialog-content>
+	<form (ngSubmit)="onSubmit()">
+		<mat-form-field>
+			<input matInput [(ngModel)]="boardName" name="boardName" placeHolder="Name" required>
+		</mat-form-field>
+	</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+	<button mat-button (click)="onCancel()">Cancel</button>
+	<button mat-button (click)="onSubmit()">Submit</button>
+</mat-dialog-actions>

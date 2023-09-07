@@ -1,0 +1,9 @@
+.board-list-item {
+	display: inline-block;
+	width: 80%;
+	background-color: #3ab740;
+	color: white;
+	border-radius: 8px;
+	padding: 10px;
+	cursor: pointer;
+}

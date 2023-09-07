@@ -1,0 +1,45 @@
+<div class="board-container" style="padding: 10px">
+	<h1>Trello Clone</h1>
+	<button mat-raised-button (click)="navigateToHome()">Home</button>
+	
+	
+	<h2>{{ boardName }}</h2>
+	
+	
+	<!-- add list -->
+	<form id="createBoardListForm" (submit)="createBoardList(boardListName.value); boardListName.value=''">
+		<input matInput type="text" #boardListName placeholder="Enter new list name" required>
+		<button mat-raised-button type="submit" color="primary">Add list</button> 
+	</form>	
+	
+	<!-- board lists -->
+	<div class="board-lists-container">
+		<div *ngFor='let boardList of boardLists' class="board-list">
+			<h2>{{ boardList.name }}	</h2>
+			
+			<button mat-icon-button color="warn" (click)="deleteBoardList(boardList.id)">
+				<mat-icon>delete</mat-icon>
+			</button>
+			
+			<!-- cards -->
+			<div *ngFor='let card of boardList.cards' class="card">
+				<p>{{ card.content }}</p>
+				
+				<!-- delete card -->
+				<div class="card-delete-button-container">
+					<button mat-icon-button color="warn" (click)="deleteCard(card.id)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</div>
+			</div>
+			
+			<!-- add card -->
+			<form (submit)="createCard(boardList.id, cardContent.value); cardContent.value=''">
+				<input matInput type="text" #cardContent placeholder="Enter new card" required>
+				<button	mat-raised-button type="submit">Add card</button> 
+			</form>	
+		</div>
+	</div>
+	
+	
+</div>

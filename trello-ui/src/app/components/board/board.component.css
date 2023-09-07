@@ -1,0 +1,32 @@
+.board-lists-container {
+	display: flex; 
+	overflow-x: auto; 
+}
+
+.board-list {
+	flex: 0 0 300px; 
+	padding: 10px;
+	margin-right: 10px;
+	background-color: #f7f7f7;
+	border: 1px solid #3ab740;
+}
+
+.card {
+	background-color: #3ab740;
+	margin-top: 5px;
+	border-radius: 5px;
+	
+	display: flex;	/* flexbox za kartice */
+	align-items: center; 
+}
+.card p {
+	margin: 0px; 
+	margin-left: 10px; 
+}
+.card-delete-button-container {
+	margin-left: auto; /* button align right */
+}
+
+form {
+	margin: 10px;
+}
